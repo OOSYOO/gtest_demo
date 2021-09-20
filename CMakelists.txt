@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(gtest_demo)
+
+#添加googletest编译，头文件及库目录
+add_subdirectory(3rdparty/googletest)
+include_directories(3rdparty/googletest/googletest/include)
+link_directories($PROJECT_BINARY_DIR/lib/)
+
+
+add_executable(gtest_demo source/main.cpp)
+target_link_libraries(gtest_demo gtest)
